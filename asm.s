@@ -19,8 +19,8 @@ _myFunction:                            ## @myFunction
 	add	edx, dword ptr [ebp + 12] # edx +=eax (adds value at address ebp+12, which is 1st input param, to local var, which is value of 2nd input param) 
 	mov	dword ptr [ebp - 4], eax ## 4-byte Spill --> moves eax to avoid spillage		
 	mov	eax, edx # eax = edx -->moves value of edx into eax (accumulator) as return value
-	add	esp, 4 #  esp +=4 same as pop –4 bytes taken from stack pointer
-	pop	ebp
+	add	esp, 4 # adding 4 to esp is same as pop –-> 4 bytes taken from stack pointer
+	pop	ebp #popping base pointer to close function before returning
 	ret
 	.cfi_endproc
                                         ## -- End function
